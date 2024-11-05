@@ -1,0 +1,26 @@
+name: Java CI with Maven - Test and package
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Checkout du code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Étape 2 : Configuration de Java avec Corretto 21
+      - name: Set up Java 21 with Corretto
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'corretto'
+
+      # Étape 3 : Construction du projet avec Maven
+      - name: Build with Maven
+        run: mvn -B package

@@ -293,13 +293,31 @@ void modifierPremierTest() {
 
 @Test
 void supprimePremierTest() {
-    listeATester.ajout(1);  
-    listeATester.ajout(2);  
-    listeATester.ajout(3);  
+listeATester.ajout(1);
+listeATester.ajout(2);
+listeATester.ajout(3);
 
-    listeATester.supprimePremier(3); 
-    assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
-    assertEquals(2, listeATester.getSize());  
+listeATester.supprimePremier(3);
+assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
+assertEquals(2, listeATester.getSize());
+
+listeATester.supprimePremier(2);
+assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+assertEquals(1, listeATester.getSize());
+
+listeATester.ajout(4);
+listeATester.supprimePremier(1);
+assertEquals("ListeSimple(Noeud(4))", listeATester.toString());
+assertEquals(1, listeATester.getSize());
+
+listeATester.supprimePremier(10);
+assertEquals("ListeSimple(Noeud(4))", listeATester.toString());
+assertEquals(1, listeATester.getSize());
+
+ListeSimple emptyListe = new ListeSimple();
+emptyListe.supprimePremier(1);
+assertNull(emptyListe.tete);
+assertEquals(0, emptyListe.getSize());
 }
 
 }

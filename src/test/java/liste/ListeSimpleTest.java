@@ -299,7 +299,7 @@ void supprimePremierTest() {
 
     listeATester.supprimePremier(3); 
     assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
-    assertEquals(2, listeATester.size);  
+    assertEquals(2, listeATester.getSize());  
 }
 
 }

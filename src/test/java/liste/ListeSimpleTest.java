@@ -269,6 +269,27 @@ class ListeSimpleTest {
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
     }
     
+    @Test
+void modifierPremierTest() {
+    listeATester.ajout(1);  
+    listeATester.ajout(2);  
+    listeATester.ajout(3);  
+
+    listeATester.modifiePremier(2, 5);  
+    assertEquals("ListeSimple(Noeud(3), Noeud(5), Noeud(1))", listeATester.toString());
+
+    listeATester.modifiePremier(10, 15);  
+    assertEquals("ListeSimple(Noeud(3), Noeud(5), Noeud(1))", listeATester.toString()); 
+
+    listeATester.modifiePremier(3, 7);  
+    assertEquals("ListeSimple(Noeud(7), Noeud(5), Noeud(1))", listeATester.toString());
+
+    ListeSimple listeSingle = new ListeSimple();
+    listeSingle.ajout(4); 
+    listeSingle.modifiePremier(4, 8);  
+    assertEquals("ListeSimple(Noeud(8))", listeSingle.toString());
+}
+
 
 
 }

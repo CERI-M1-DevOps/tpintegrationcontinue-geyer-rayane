@@ -256,4 +256,13 @@ class ListeSimpleTest {
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))",listeATester.toString());
     }
+
+    @Test
+    void echangerNoeudIdentique() {
+        listeATester.ajout(1);
+        Noeud r1 = listeATester.tete;
+        Noeud r2 = listeATester.tete;
+        listeATester.echanger(r1, r2);
+        assertNull(listeATester.echanger(r1, r2););
+    }
 }

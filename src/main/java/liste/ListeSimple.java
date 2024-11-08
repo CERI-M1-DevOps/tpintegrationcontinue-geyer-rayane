@@ -48,7 +48,6 @@ public class ListeSimple {
      * l'objet <code>nouvelleValeur</code>.
      * @param nouvelleValeur l'objet qui remplace <code>element</code>.
      */
-     * @param element l'objet dont on souhaite modifier les occurrences.
 
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;

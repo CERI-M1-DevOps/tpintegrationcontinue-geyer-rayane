@@ -128,6 +128,11 @@ public class ListeSimple {
         } else return null;
     }
 
+    /**
+     * Renvoie le nœud qui précède le dernier nœud de la liste.
+     * Si la liste est vide ou n'a qu'un seul élément, renvoie <code>null</code>.
+     * @return le nœud qui précède le dernier nœud de la liste.
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
@@ -142,6 +147,9 @@ public class ListeSimple {
         }
     }
 
+    /**
+     * Inverse l'ordre des éléments de la liste en place.
+     */
     public void inverser() {
         Noeud precedent = null;
         Noeud courant = tete;

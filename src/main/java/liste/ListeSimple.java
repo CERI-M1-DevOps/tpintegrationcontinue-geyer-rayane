@@ -4,6 +4,11 @@ public class ListeSimple {
     private long size;
     Noeud tete;
 
+/**
+ * Returns the current size of the list.
+ *
+ * @return the number of elements in the list.
+ */
     public long getSize() {
         return size;
     }

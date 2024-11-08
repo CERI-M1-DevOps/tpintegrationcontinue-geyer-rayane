@@ -104,6 +104,13 @@ public class ListeSimple {
         }
     }
 
+/**
+ * Supprime tous les nœuds de la liste ayant la valeur spécifiée par
+ * <code>element</code>. Tous les nœuds correspondants sont retirés de 
+ * la liste et la taille de la liste est ajustée en conséquence.
+ *
+ * @param element la valeur de l'élément à supprimer.
+ */
     public void supprimeTous(int element) {
        tete = supprimeTousRecurs(element, tete);
     }

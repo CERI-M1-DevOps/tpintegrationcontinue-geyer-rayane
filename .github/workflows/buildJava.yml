@@ -21,6 +21,28 @@ jobs:
           java-version: '21'
           distribution: 'corretto'
 
-      # Étape 3 : Construction du projet avec Maven
+      # Étape 3.1 : Installation de Maven
+      - name: Cache Maven dependencies
+        uses: actions/cache@v4
+        id: maven-cache
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Étape 3.2 : Construction du projet avec Maven
       - name: Build with Maven
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar-Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-') 
+
+      # Étape 4 : Cache SonarQube packages
+      - name: Cache SonarQube packages
+        uses: actions/cache@v4
+        id: sonar-cache
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar-${{ hashFiles('**/sonar-project.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-sonar-

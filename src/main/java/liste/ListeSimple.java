@@ -13,10 +13,25 @@ public class ListeSimple {
         return size;
     }
 
+    /**
+     * Ajoute un l ment  la liste, en t te.
+     * @param element l l ment  ajouter.
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
+
+
+    /**
+     * Modifie le premier  l ment de la liste qui a comme valeur
+     * <code>element</code> en mettant  jour sa valeur avec
+     * <code>nouvelleValeur</code>. Si aucun  l ment ne correspond,
+     * la liste n'est pas modifi e.
+     *
+     * @param element la valeur de l' l ment  modifier
+     * @param nouvelleValeur la nouvelle valeur de l' l ment
+     */
 
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
@@ -25,6 +40,15 @@ public class ListeSimple {
         if (courant != null)
             courant.setElement(nouvelleValeur);
     }
+
+    
+    /**
+     * Modifie tous les  l ments de la liste qui ont comme valeur
+     * l'objet <code>element</code> et remplace cette valeur par
+     * l'objet <code>nouvelleValeur</code>.
+     * @param nouvelleValeur l'objet qui remplace <code>element</code>.
+     */
+     * @param element l'objet dont on souhaite modifier les occurrences.
 
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
@@ -35,6 +59,11 @@ public class ListeSimple {
         }
     }
 
+    /**
+     * Renvoie une chaîne de caractères qui représente la liste sous la forme
+     * "ListeSimple(Noeud1, Noeud2, ...)".
+     * @return une cha ne de caractères qui représente la liste.
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;

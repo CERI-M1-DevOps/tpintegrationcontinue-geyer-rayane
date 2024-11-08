@@ -76,6 +76,14 @@ public class ListeSimple {
         return sb.toString();
     }
 
+/**
+ * Supprime le premier nœud de la liste ayant la valeur spécifiée par
+ * <code>element</code>. Si un tel nœud est trouvé, il est retiré de 
+ * la liste et la taille de la liste est décrémentée. Si aucun nœud 
+ * correspondant n'est trouvé, la liste reste inchangée.
+ *
+ * @param element la valeur de l'élément à supprimer.
+ */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
